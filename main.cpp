@@ -168,7 +168,14 @@ void arth()
     char op;
     if(odr==2)
     {
-        std::cout<<"Enter the Operator : ";std::cin>>op;
+        while(!(op=='+'||op=='-'))
+        {
+            std::cout<<"Enter the Operator : ";std::cin>>op;
+            if(!(op=='+'||op=='-'))
+               {
+                   HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,4);std::cout<<"Invalid Operator!"<<std::endl;SetConsoleTextAttribute(h,15);
+               }
+        }
         std::cout<<"Enter the Matrix : ";
         for(int i=0; i<odr;i++)
             {
@@ -200,18 +207,20 @@ void arth()
                                 }
                             }
                             break;
-                default
-                : HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);
-                SetConsoleTextAttribute(h,4);
-                std::cout<<"Invalid Operator"<<std::endl;
-                SetConsoleTextAttribute(h,15);
             }
 
     }
 
     if(odr==3)
     {
-        std::cout<<"Enter the Operator : ";std::cin>>op;
+        while(!(op=='+'||op=='-'))
+        {
+            std::cout<<"Enter the Operator : ";std::cin>>op;
+            if(!(op=='+'||op=='-'))
+               {
+                   HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,4);std::cout<<"Invalid Operator!"<<std::endl;SetConsoleTextAttribute(h,15);
+               }
+        }
         std::cout<<"Enter the Matrix : ";
         for(int i=0; i<odr;i++)
             {
@@ -250,17 +259,6 @@ void arth()
             show(odr ,amata,amata2);
 
 }
-//_____________________________________________________________________________________________________________inverse
-/*double invr(int odr,double adjm[3][3],double adjm2[2][2])
-{
-    for(int i; i<odr;i++)
-    {
-        for(int j;j<odr;j++)
-        {
-            invr[i][j]=adjm[i][j]/det(odr,mat,mat2);
-        }
-    }
-}*/
 //____________________________________________________________________________________________________________main
 int main()
 {
@@ -369,17 +367,17 @@ std::cout<<"====================================================================
     std::cout<<"y to continue / n to exit ";std::cin>>dec;
     system("cls");
 }
-std::cout<<"------------------_-----------_-----------------------------------"<<std::endl;
-std::cout<<"-----------------_-_---------_-_----------------------------------"<<std::endl;
-std::cout<<"----------------_---_-------_---_---------------------------------"<<std::endl;
-std::cout<<"---------------_-----_-----_-----_--------------------------------"<<std::endl;
-std::cout<<"--------------_-------_---_-------_-------------------------------"<<std::endl;
-std::cout<<"-------------_---------_-_---------_------------------------------"<<std::endl;
-std::cout<<"------------_-----------_-----------_-----------------------------"<<std::endl;
-std::cout<<"-----------_-------------------------_----------------------------"<<std::endl;
-std::cout<<"----------_---------------------------_---------------------------"<<std::endl;
-std::cout<<"---------_-----------------------------_--------------------------"<<std::endl;
-std::cout<<"--------_-------------------------------_-------------------------"<<std::endl;
+std::cout<<"------------------_-----------_-------------------"<<std::endl;
+std::cout<<"-----------------_-_---------_-_------------------"<<std::endl;
+std::cout<<"----------------_---_-------_---_-----------------"<<std::endl;
+std::cout<<"---------------_-----_-----_-----_----------------"<<std::endl;
+std::cout<<"--------------_-------_---_-------_---------------"<<std::endl;
+std::cout<<"-------------_---------_-_---------_--------------"<<std::endl;
+std::cout<<"------------_-----------_-----------_-------------"<<std::endl;
+std::cout<<"-----------_-------------------------_------------"<<std::endl;
+std::cout<<"----------_---------------------------_-----------"<<std::endl;
+std::cout<<"---------_-----------------------------_----------"<<std::endl;
+std::cout<<"--------_-------------------------------_---------"<<std::endl;
 std::cout<<"y to start over / e to exit ";std::cin>>dec;
 }
 }
