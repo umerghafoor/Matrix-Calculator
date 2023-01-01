@@ -266,7 +266,7 @@ int main()
     int N;
     double detr;
     HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,11);
-    std::cout<<"Code by Umer Ghafoor & Umair Idrees"<<std::endl;
+    std::cout<<"Code by Umer Ghafoor"<<std::endl;
     SetConsoleTextAttribute(h,15);
 while (dec!='e')
 {
