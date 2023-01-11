@@ -164,14 +164,15 @@ void adj(int odr,double mat[3][3],double mat2[2][2])
 //------------------------------------------------------------------------------------------------------------Arithmatic
 void arth()
 {
+    char opr='-';
     double mata[3][3],mata2[2][2],amata[3][3],amata2[2][2];
-    char op;
+    
     if(odr==2)
     {
-        while(!(op=='+'||op=='-'))
+        while(!(opr=='+'||opr=='-'))
         {
-            std::cout<<"Enter the Operator : ";std::cin>>op;
-            if(!(op=='+'||op=='-'))
+            std::cout<<"Enter the Operator : ";std::cin>>opr;
+            if(!(opr=='+'||opr=='-'))
                {
                    HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,4);std::cout<<"Invalid Operator!"<<std::endl;SetConsoleTextAttribute(h,15);
                }
@@ -186,10 +187,10 @@ void arth()
                 }
             }
             show(odr,mat,mat2);
-            std::cout<<"        "<<op<<"       "<<std::endl;
+            std::cout<<"        "<<opr<<"       "<<std::endl;
             show(odr,mata,mata2);
             std::cout<<"        =       "<<std::endl;
-            switch(op)
+            switch(opr)
             {
                 case '+': for(int i=0;i<odr;i++)
                             {
@@ -213,10 +214,10 @@ void arth()
 
     if(odr==3)
     {
-        while(!(op=='+'||op=='-'))
+        while(!(opr=='+'||opr=='-'))
         {
-            std::cout<<"Enter the Operator : ";std::cin>>op;
-            if(!(op=='+'||op=='-'))
+            std::cout<<"Enter the Operator : ";std::cin>>opr;
+            if(!(opr=='+'||opr=='-'))
                {
                    HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,4);std::cout<<"Invalid Operator!"<<std::endl;SetConsoleTextAttribute(h,15);
                }
@@ -231,10 +232,10 @@ void arth()
                 }
             }
             show(odr,mat,mat2);
-            std::cout<<"            "<<op<<"           "<<std::endl;
+            std::cout<<"            "<<opr<<"           "<<std::endl;
             show(odr,mata,mata2);
             std::cout<<"            =           "<<std::endl;
-            switch(op)
+            switch(opr)
             {
                 case '+': for(int i=0;i<odr;i++)
                             {
@@ -262,7 +263,7 @@ void arth()
 //____________________________________________________________________________________________________________main
 int main()
 {
-    char dec;
+    char dec='q';
     int N;
     double detr;
     HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,11);
