@@ -1,5 +1,5 @@
 # Portfolio
-In this project, we have to implement a matrix system based on its order. The matrix must be square (i.e. rows and columns must be the same). The program initially asks the user to enter the order (N) of matrix A and its elements. The program presents the user with a choice (1- 7) to perform specific tasks given below.
+In this project, we put a matrix system into place based on its hierarchy. A square matrix is required (i.e. rows and columns must be the same). The user is prompted by the application to enter the order (N) of matrix A and its components at first. The programme gives the user the option to complete the below-listed tasks in any order (1–8).
 1.	To display a matrix
 2.	To check whether the entered matrix is symmetric or not
 3.	To check whether the entered matrix is an identity matrix or not.
