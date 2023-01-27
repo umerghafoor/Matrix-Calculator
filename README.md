@@ -1,4 +1,4 @@
-# Portfolio
+# Matrix Calculator
 In this project, we put a matrix system into place based on its hierarchy. A square matrix is required (i.e. rows and columns must be the same). The user is prompted by the application to enter the order (N) of matrix A and its components at first. The programme gives the user the option to complete the below-listed tasks in any order (1–8).
 1.	To display a matrix
 2.	To check whether the entered matrix is symmetric or not
