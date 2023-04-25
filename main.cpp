@@ -6,8 +6,15 @@
     int odr;
     double mat2[2][2];
     double mat[3][3];
-
-//_______________________________________________________________________________________________________Dispaly
+/**
+ * The function displays a 2D array of doubles with a specified precision and formatting.
+ * 
+ * @param odr odr is an integer parameter that specifies the order of the matrix. It can have a value
+ * of either 2 or 3, depending on whether the matrix is a 2x2 or a 3x3 matrix.
+ * @param dmat dmat is a 2D array of size 3x3 containing double precision floating point values.
+ * @param dmat2 dmat2 is a 2-dimensional array of type double with dimensions 2x2. It is used as a
+ * parameter in the function show() to display the values stored in the array.
+ */
 void show(int odr,double dmat[3][3],double dmat2[2][2])
 {
     HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);
@@ -36,8 +43,14 @@ void show(int odr,double dmat[3][3],double dmat2[2][2])
     }
     SetConsoleTextAttribute(h,15);
 }
-//____________________________________________________________________________________________________________symetry
 
+/**
+ * The function checks if a given matrix is symmetric or not.
+ * 
+ * @param odr The order of the matrix (either 2 or 3)
+ * @param mat A 3x3 matrix of type double.
+ * @param mat2 mat2 is a 2x2 matrix of type double.
+ */
 void sym(int odr,double mat[3][3],double mat2[2][2])
 {
 bool x=1;
@@ -65,8 +78,14 @@ bool x=1;
     if(x){std::cout<<" Matrix is symytrical"<<std::endl;}
     else {std::cout<<" Matrix is not symytrical"<<std::endl;}
 }
-//____________________________________________________________________________________________________________Identity
 
+/**
+ * The function checks if a given matrix is an identity matrix or not.
+ * 
+ * @param odr The order of the matrix, which can be either 2 or 3.
+ * @param mat The parameter "mat" is a 3x3 matrix of type double.
+ * @param mat2 mat2 is a 2x2 matrix of type double.
+ */
 void id(int odr,double mat[3][3],double mat2[2][2])
 {
 bool x=1;
@@ -96,8 +115,15 @@ if(odr==2)
     if(x){std::cout<<" Matrix is Identity matrix"<<std::endl;}
     else {std::cout<<" Matrix is not a identity matrix"<<std::endl;}
 }
-//____________________________________________________________________________________________________________Equations
 
+/**
+ * The function takes in two matrices and solves for the variables using matrix inversion.
+ * 
+ * @param odr The parameter "odr" is an integer variable that determines the order of the matrix. It
+ * can have a value of either 2 or 3, indicating whether the matrix is a 2x2 or a 3x3 matrix.
+ * @param mat A 3x3 matrix of type double.
+ * @param mat2 The parameter "mat2" is a 2x2 matrix of type double.
+ */
 void solve(int odr,double mat[3][3],double mat2[2][2])
 {
     double cff[3];
@@ -121,7 +147,16 @@ void solve(int odr,double mat[3][3],double mat2[2][2])
             std::cout<<"X = "<<a<<std::endl<<"Y = "<<b<<std::endl;
         }
 }
-//____________________________________________________________________________________________________________determinent
+/**
+ * The function calculates the determinant of a 2x2 or 3x3 matrix.
+ * 
+ * @param odr The order of the matrix (either 2 or 3)
+ * @param mat A 3x3 matrix of doubles
+ * @param mat2 mat2 is a 2x2 matrix of type double. It is used to calculate the determinant of a 2x2
+ * matrix.
+ * 
+ * @return the determinant of a 2x2 or 3x3 matrix, depending on the value of the parameter "odr".
+ */
 double det(int odr,double mat[3][3],double mat2[2][2])
 {
     int det;
@@ -138,7 +173,16 @@ double det(int odr,double mat[3][3],double mat2[2][2])
     }
     return det;
 }
-//_____________________________________________________________________________________________________________Adjoint
+/**
+ * The function calculates the adjoint matrix of a given matrix of order 2 or 3.
+ * 
+ * @param odr odr is an integer parameter that specifies the order of the matrix. It can have a value
+ * of either 2 or 3.
+ * @param mat The parameter "mat" is a 3x3 matrix of type double.
+ * @param mat2 mat2 is a 2x2 matrix of type double. It is used as an input parameter in the function
+ * adj() to calculate its adjoint matrix adjm2. The adjoint matrix of a 2x2 matrix is obtained by
+ * swapping the positions of the elements in the main diagonal,
+ */
 void adj(int odr,double mat[3][3],double mat2[2][2])
 {
     if(odr==3)
@@ -161,7 +205,9 @@ void adj(int odr,double mat[3][3],double mat2[2][2])
         adjm2[1][0]=-mat2[1][0];
     }
 }
-//------------------------------------------------------------------------------------------------------------Arithmatic
+/**
+ * This function performs arithmetic operations on matrices of size 2x2 or 3x3.
+ */
 void arth()
 {
     char opr='-';
@@ -260,7 +306,7 @@ void arth()
             show(odr ,amata,amata2);
 
 }
-//____________________________________________________________________________________________________________main
+
 int main()
 {
     char dec='q';
@@ -276,7 +322,6 @@ while (dec!='e')
     std::cout<<"Enter the Order of matrix : ";std::cin>>odr;
     if(odr==2 || odr==3){}
     else{HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,4);std::cout<<"Invalid matrix!"<<std::endl;SetConsoleTextAttribute(h,15);continue;}
-//___________________________________________________________________________________________________________INPUT
     switch(odr)
     {
     case 3:
@@ -338,14 +383,14 @@ while(dec!='n')
 {
     HANDLE h=GetStdHandle(STD_OUTPUT_HANDLE);SetConsoleTextAttribute(h,03);
 std::cout<<"======================================================================================="<<std::endl;
-std::cout<<"1. To display a matrix"<<std::endl;
-std::cout<<"2. To check whether the entered matrix is symmetric matrix or not"<<std::endl;
-std::cout<<"3. To check whether the entered matrix is identity matrix or not"<<std::endl;
-std::cout<<"4. To determine the determinant of entered matrix"<<std::endl;
-std::cout<<"5. To determine the adjoint of entered matrix"<<std::endl;
-std::cout<<"6. To determine the inverse of entered matrix"<<std::endl;
-std::cout<<"7. To determine the solution of entered matrix (i.e. solving multiple linear equations simultaneously)"<<std::endl;
-std::cout<<"8. To Arthmatic"<<std::endl;
+std::cout<<"|\t1. To display a matrix"<<std::endl;
+std::cout<<"|\t2. To check whether the entered matrix is symmetric matrix or not"<<std::endl;
+std::cout<<"|\t3. To check whether the entered matrix is identity matrix or not"<<std::endl;
+std::cout<<"|\t4. To determine the determinant of entered matrix"<<std::endl;
+std::cout<<"|\t5. To determine the adjoint of entered matrix"<<std::endl;
+std::cout<<"|\t6. To determine the inverse of entered matrix"<<std::endl;
+std::cout<<"|\t7. To determine the solution of entered matrix (i.e. solving multiple linear equations simultaneously)"<<std::endl;
+std::cout<<"|\t8. To Arthmatic"<<std::endl;
 std::cout<<"======================================================================================="<<std::endl;
     SetConsoleTextAttribute(h,15);
 
